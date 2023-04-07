@@ -4,4 +4,4 @@
 
 💙 Join the channel to see more videos like this. [CFD - Cricle](https://www.youtube.com/@CFDCircle)
 
-![preview img](/thumnail.png)
+![preview img](/thumnail_luxestate.png)
