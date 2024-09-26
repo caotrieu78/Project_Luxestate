@@ -17,6 +17,7 @@ html {
     /* === Container === */
     --max-width: 1140px;
     --pd-contact: calc((100vw - var(--max-width) - 15px) / 2);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
     font-size: 13px;
     line-height: 30px;
     letter-spacing: -0.4px;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -321,6 +323,28 @@ img {
 }
 
 
+/* === scrollbars === */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white-cl);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--yellow-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--yellow-hover-color);
+}
+
+
+/* === Active === */
+
+
 /* === HEADER === */
 
 .header {
@@ -526,7 +550,7 @@ main {
 .schero .schero__scroll img {
     transform: translateY(0);
     opacity: 1;
-    animation: scroll 2s infinite;
+    animation: scroll 1s infinite;
 }
 
 @keyframes scroll {
@@ -534,42 +558,52 @@ main {
         transform: translateY(0);
         opacity: 1;
     }
+
     10% {
         transform: translateY(2);
         opacity: 0.9;
     }
+
     20% {
         transform: translateY(4px);
         opacity: 0.8;
     }
+
     30% {
         transform: translateY(6px);
         opacity: 0.7;
     }
+
     40% {
         transform: translateY(8px);
         opacity: 0.6px;
     }
+
     50% {
         transform: translateY(10px);
         opacity: 0.5;
     }
+
     60% {
         transform: translateY(12px);
         opacity: 0.4;
     }
+
     70% {
         transform: translateY(14px);
         opacity: 0.3;
     }
+
     80% {
         transform: translateY(16px);
         opacity: 0.2;
     }
+
     90% {
         transform: translateY(18px);
         opacity: 0.1;
     }
+
     100% {
         transform: translateY(20px);
         opacity: 0;
@@ -873,6 +907,7 @@ main {
     background-color: var(--yellow-color);
     padding: 0 53px;
     z-index: 2;
+    text-decoration: none;
 }
 
 .sclocation .sclocation__location .sclocation__location-img .location img {
@@ -880,7 +915,7 @@ main {
     flex-shrink: 0;
 }
 
-.sclocation .sclocation__location .sclocation__location-img .location a {
+.sclocation .sclocation__location .sclocation__location-img .location span {
     text-decoration: none;
     font-size: 18px;
     letter-spacing: -0.4px;
@@ -888,7 +923,7 @@ main {
     color: var(--blue-color);
 }
 
-.sclocation .sclocation__location .sclocation__location-img .location a:hover {
+.sclocation .sclocation__location .sclocation__location-img .location:hover span {
     opacity: 0.5;
     transition: var(--time-transition);
     -webkit-transition: var(--time-transition);
@@ -972,7 +1007,6 @@ main {
     -webkit-transition: var(--time-transition);
     -moz-transition: var(--time-transition);
 }
-
 .sccontact .sccontact__form .form-input input[type="text"]:focus,
 .sccontact .sccontact__form .form-input textarea:focus {
     border-bottom: 1px solid var(--blue-color)
@@ -983,15 +1017,22 @@ main {
 }
 
 .sccontact .sccontact__form .form-select select {
-    width: 62px;
+    padding-top: 2px;
+    padding-left: 4px;
+    width: 57px;
     color: var(--blue-light-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background: url(../img/icon-dropdown-select.png) no-repeat;
     background-size: 10px;
-    background-position: 24px 7px;
+    background-position: 29px 7px;
     cursor: pointer;
+}
+
+.sccontact .sccontact__form .form-select select option {
+    border-radius: 0;
+    padding: 10px;
 }
 
 .sccontact .sccontact__form .form-input textarea {
@@ -1105,7 +1146,7 @@ main {
 
 .sccontact .sccontact__form .form-input .checkboxlist input[type="checkbox"]+label::after {
     content: "";
-    left: 4px;
+    left: 3px;
     width: 8px;
     height: 7px;
     position: absolute;
@@ -1246,7 +1287,7 @@ main {
     font-size: 13px;
     color: var(--white-cl);
     padding-bottom: 5px;
-    display: block;
+    display: inline-flex;
     transition: var(--time-transition);
     -webkit-transition: var(--time-transition);
     -moz-transition: var(--time-transition);
