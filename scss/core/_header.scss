@@ -1,0 +1,150 @@
+.header {
+  &.--bg-black{
+    background-color:black;
+    @include transition(var(--duration));
+  }
+  height: var(--header-height);
+  width: 100%;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__menu {
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    li {
+      height: 100%;
+      list-style: none;
+      a {
+        height: 100%;
+        @include mid(true);
+        @include text(pb, --fs-text-button, --lh-text-button, var(--white-cl), uppercase);
+        @include transition(var(--duration));
+        margin-left: 2rem;
+        margin-right: 2rem;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background-color: var(--main-cl);
+          bottom: 3rem;
+          @include transform-origin("right ");
+          @include transform(scaleX(0));
+          @include transition("var(--duration) transform, var(--duration) background-color");
+        }
+          &.active {
+                   color: var(--main-cl);
+            
+                   transition: var(--duration); 
+          }  
+        &:hover {
+          color: var(--main-cl);
+         
+          &::after {
+            @include transform(scaleX(1));
+            @include transform-origin("left");
+          }
+        }
+      }
+      
+    }
+  }
+  .right{
+    height: 100%;
+    display: flex;
+    
+    align-items: center;
+    .lang{
+      position: relative;
+      height: 100%;
+      cursor: pointer;
+      &__current{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        span{
+          @include text(pb, 15px, 18px, var(--white-cl), uppercase);
+          opacity: 0.5;
+          text-decoration: none;
+          margin-right: 8px;
+        }
+        :hover{
+          color: var(--main-cl);
+          transition: var(--duration);
+        }
+        i{
+          @include transform(rotateX(0deg));
+          @include transition (var(--duration));
+          img{
+            width: 12px;
+          }
+        }
+      }
+      &__option{
+        background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        position: absolute;
+        right: 0;
+        font-family: pb;
+        @include midflex;
+        flex-direction: column;
+        top: var(--header-height);
+        opacity: 0;
+        visibility: hidden;
+        @include transition(--duration);
+        a{
+          padding: 10px 20px ;
+          display: block;
+          color: var(--white-cl);
+          text-transform: uppercase;
+          text-decoration: none;
+          @include transition(--duration);
+          &:first-child{
+            padding: 12px;
+          }
+          &:last-child{
+            padding-bottom: 12px;
+          }
+          &:hover{
+            color: var(--main-cl);
+            @include transition(--duration);
+          }
+        }
+      }
+      &.active{
+        .lang__current{
+        i{
+          @include transform(rotateX(180deg));
+        }
+      }
+      .lang__option{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    }
+  }
+  @include sm {
+    .container-fluid {
+      .header__menu {
+        display: none;
+      }
+      .btnmenu {
+        display: block;
+      }
+    }
+  }
+}

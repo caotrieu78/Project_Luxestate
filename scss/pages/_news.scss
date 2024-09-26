@@ -1,0 +1,62 @@
+.news {
+    .textbox {
+        max-width: 380px;
+        transition: var(--duration);
+    }
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        margin-bottom: 35px;
+        transition: var(--duration);
+    }
+    &__btn {
+        @include textbtn;
+        @include midflex;
+        border: 1px solid var(--main-cl);
+        color: var(--main-cl);
+        height: 38px;
+        padding: 0 16px;
+        cursor: pointer;
+        transition: var(--duration);
+        &.--active {
+            background-color: var(--main-cl);
+            color: var(--white-cl);
+        }
+        &:hover {
+            background-color: var(--main-cl);
+            color: var(--white-cl);
+            transition: var(--duration);
+        }
+    }
+    &__list {
+        display: none;
+        &.--active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+    }
+    @include xs {
+        .textbox {
+            margin-bottom: 31px;
+        }
+        &__btns {
+            margin-bottom: 31px;
+        }
+        &__btn {
+            @include textbtn-m;
+            height: 28px;
+            padding: 0 12px;
+        }
+        &__list {
+            &.--active {
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                align-items: center;
+            }
+        }
+    }
+}

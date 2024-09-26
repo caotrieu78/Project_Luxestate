@@ -1,0 +1,27 @@
+.photos{
+     padding-top: 0;
+.carousel {
+      position: relative;
+      z-index: 100;
+        img {
+            height: 450px;
+            max-width: initial;
+            margin-right: 20px;
+
+        }
+}
+.progress-bar {
+    margin-bottom: -50px;
+    height: 5px;
+    background-color: var(--black-cl);
+    width: 130px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    span {
+            height: 100%;
+            position: absolute;
+            background-color: var(--main-cl);
+        }
+}
+}
+ 

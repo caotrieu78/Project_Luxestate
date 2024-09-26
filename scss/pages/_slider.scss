@@ -1,0 +1,184 @@
+.slider {
+    height: 100vh;
+    min-height: 515px;
+    max-height: 1368px;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    &__item {
+        height: 100vh;
+        width: 100%;
+        &-wrap {
+            width: 100%;
+            height: 100%;
+        }
+        &.--active {
+            display: block;
+        }
+
+        &-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            @include midflex;
+            flex-direction: column;
+
+            .heading {
+                color: var(--main-cl);
+            }
+
+            .btn {
+                margin-top: 16px;
+                color: var(--white-cl);
+                transition: var(--duration);
+
+                i {
+                    margin-left: 10px;
+                    max-width: 22px;
+                }
+
+                &:hover {
+                    i {
+                        margin-left: 14px;
+                        transition: var(--duration);
+                    }
+                }
+            }
+        }
+
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        transition: var(--duration);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: var(--duration);
+            }
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 32px;
+
+        .container-fluid {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: end;
+            position: relative;
+        }
+
+        &-paging {
+            @include midflex;
+
+            .number {
+                font-size: 3.8rem;
+                font-family: pb;
+                line-height: normal;
+                letter-spacing: 0.06em;
+                color: var(--main-cl);
+            }
+
+            .number:nth-child(1) {
+                display: flex;
+                &::after {
+                    display: block;
+                    font-family: monospace;
+                    content: "/";
+                }
+            }
+
+            .flickity-page-dots {
+                margin-left: 18px;
+                position: initial;
+
+                li {
+                    list-style: none;
+                    cursor: pointer;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: var(--main-cl);
+
+                    &:hover {
+                        background-color: var(--main-cl);
+                    }
+                    &.--active {
+                        background-color: var(--main-cl);
+                    }
+                }
+
+            }
+        }
+
+        &-mouse {
+            @include midflex;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+
+            .mouse {
+                margin-bottom: 9px;
+            }
+
+            .arrow {
+                animation: 0.6s move infinite alternate;
+
+                @keyframes move {
+                    from {
+                        transform: translateY(0);
+                    }
+
+                    to {
+                        transform: translateY(20%);
+                    }
+                }
+            }
+        }
+
+        &-control {
+            @include midflex;
+            border: 1px solid var(--white-cl);
+
+            .prev {
+                transform: rotate(180deg);
+                border-left: 1px solid var(--white-cl);
+            }
+        }
+    }
+
+    // Responsive
+    @include sm {
+        height: 100vh;
+        &__bottom {
+            &-mouse {
+                .mouse{
+                display: none;
+                }
+            }
+            &-paging{
+                .number{
+                display: none;
+                }
+               .number:nth-child(1){
+                display: none;
+               }
+            }
+
+        }
+    }
+}

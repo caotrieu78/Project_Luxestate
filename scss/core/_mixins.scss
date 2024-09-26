@@ -1,0 +1,186 @@
+@mixin lg {
+  @media screen and (max-width: $lg-max) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: $md-max) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: $sm-max) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: $xs-max) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media screen and (max-width: $xxs-max) {
+    @content;
+  }
+}
+
+// Heading
+@mixin headingh1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh1-m {
+  font-size: var(--fs-h1-m);
+  line-height: var(--lh-h1-m);
+  letter-spacing: var(--ls-h1-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh2-m {
+  font-size: var(--fs-h2-m);
+  line-height: var(--lh-h2-m);
+  letter-spacing: var(--ls-h2-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh3-m {
+  font-size: var(--fs-h3-m);
+  line-height: var(--lh-h3-m);
+  letter-spacing: var(--ls-h3-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin unhide {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@mixin transform($str) {
+  transform: #{$str};
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+}
+@mixin mid($flex: false) {
+  @if $flex==false {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    position: absolute;
+  }
+
+  @else {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@mixin text($font-family, $font-size, $line-height, $color, $text-transform: none) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  text-transform: $text-transform;
+}
+@mixin transition($str) {
+  transition: #{$str};
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+}
+@mixin transform-origin($str) {
+  transform-origin: #{$str};
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+}
+
+
+
+// Align Center Item
+@mixin midflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// Text Button
+@mixin textbtn {
+  font-size: 1.5rem;
+  font-family: pb;
+  line-height: normal;
+  letter-spacing: 0.1em;
+}
+@mixin textbtn-m {
+  font-size: 1.2rem;
+  font-family: pb;
+  line-height: normal;
+  letter-spacing: 0.1em;
+}
+
+// Body Text
+@mixin bodytext {
+  font-family: pr;
+  font-size: var(--fs-bodytext);
+  line-height: var(--lh-bodytext);
+  letter-spacing: var(--ls-bodytext);
+  color: var(--gray-cl);
+}
+
+@mixin bodytext-m {
+  font-family: pr;
+  font-size: var(--fs-bodytext-m);
+  line-height: var(--lh-bodytext-m);
+  letter-spacing: var(--ls-bodytext-m);
+  color: var(--gray-cl);
+}
+
+@mixin bodytextsmall {
+  font-family: pr;
+  font-size: var(--fs-bodytext-small);
+  line-height: var(--lh-bodytext-small);
+  letter-spacing: var(--ls-bodytext-small);
+  color: var(--gray-cl);
+}

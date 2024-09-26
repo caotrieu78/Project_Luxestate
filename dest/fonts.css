@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "pr";
+  src: url("../fonts/FONTSPRINGDEMO-ProximaNovaRegular.woff2") format("woff2"),
+    url("../fonts/FONTSPRINGDEMO-ProximaNovaRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "pb";
+  src: url("../fonts/FONTSPRINGDEMO-ProximaNovaBold.woff2") format("woff2"),
+    url("../fonts/FONTSPRINGDEMO-ProximaNovaRegular.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}

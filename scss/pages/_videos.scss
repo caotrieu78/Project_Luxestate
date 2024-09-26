@@ -1,0 +1,18 @@
+.video {
+    padding-top: 0;
+    .textbox {
+        margin-bottom: 80px;
+    }
+    @include xs {
+        .textbox {
+            margin-bottom: 46px;
+        }
+        .heading {
+            text-align: center;
+        }
+        &__list {
+            flex-direction: column;
+            gap: 28px;
+        }
+    }
+}
